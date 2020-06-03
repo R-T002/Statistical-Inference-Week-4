@@ -1,0 +1,7 @@
+knitr::opts_chunk$set(echo = TRUE)
+lambda <- 0.2
+simData <- matrix(rexp(1000*40, lambda), nrow = 1000, ncol = 40)
+distMean <- apply(simData, 1, mean)
+hist(distMean, breaks = 50, main = "The distribution of 1000 averages of 40 random exponentials", xlab = "Value of means", ylab = "Frequency of means", col = "pink")
+abline(v = 1/lambda, lty = 1, lwd = 5, col = "red")
+legend("topright", lty = 1, lwd = 5, col = "red", legend = "theoretical mean")
